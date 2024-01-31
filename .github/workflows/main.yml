@@ -1,18 +1,26 @@
-name: Periodic Script Runner
+name: run main.py
 
 on:
   schedule:
-    # Runs every 15 minutes
-    - cron: '*/15 * * * *'
+    - cron: '*/15 * * * *' # Runs every 15 minutes
 
 jobs:
-  run-script:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: checkout repo content
+        uses: actions/checkout@v2 # checkout the repository content
 
-    - name: Run script
-      run: |
-        python path/to/your/script.py
+      - name: setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.8.8' # install the python version needed
+
+      - name: install python packages
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: execute py script 
+        run: python hello.py
