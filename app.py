@@ -7,7 +7,7 @@ import time  # Import the time module
 time_zones = list(pytz.all_timezones)
 
 # Sidebar for selecting up to 4 locations
-selected_timezones = st.sidebar.multiselect('Select up to 4 locations', time_zones, default=["UTC"], max_selections=4)
+selected_timezones = st.sidebar.multiselect('Select up to 4 locations', time_zones, default=["America/Los_Angeles"], max_selections=4)
 
 # Container to display clocks
 clocks_container = st.empty()
