@@ -2,8 +2,11 @@ name: run main.py
 
 on:
   schedule:
-    - cron: '*/30 * * * *' # Runs every 15 minutes
+    - cron: '*/30 * * * *' # Runs every 30 minutes
 
+on:
+  workflow_dispatch:
+  
 jobs:
   build:
     runs-on: ubuntu-latest
