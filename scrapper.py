@@ -19,4 +19,3 @@ for page_number in range(1, 42):
 for link in all_links:
     print(link)
 
-print("Total number of links:", len(all_links))
