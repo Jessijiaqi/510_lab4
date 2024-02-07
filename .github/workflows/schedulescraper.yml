@@ -16,11 +16,12 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.12' 
+        python-version: '3.11' 
 
     - name: Install dependencies
       run: |
-        pip install -r requirements.txt
+        pip install requests
+        pip install beautifulsoup4
 
     - name: Run scraper
       run: python scraper.py 
